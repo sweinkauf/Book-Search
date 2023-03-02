@@ -18,7 +18,6 @@ const SavedBooks = () => {
   console.log(userData);
   const [removeBook] = useMutation(REMOVE_BOOK);
 
-  // function that accepts the book's mongo _id value as param and deletes the book from the database
   const handleDeleteBook = async (bookId) => {
     const token = Auth.loggedIn() ? Auth.getToken() : null;
 
@@ -40,7 +39,6 @@ const SavedBooks = () => {
     }
   };
 
-  // if data isn't here yet, say so
   if (loading) {
     return <h2>LOADING...</h2>;
   }
